@@ -4,11 +4,12 @@
   font-family: "Inter", sans-serif;
   font-family: "Karla", sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  width: 50%;
+  margin: auto;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: rgb(0, 0, 0);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,6 +20,8 @@
 
 body {
   margin: 0;
+
+  background-color: #242424;
 }
 
 /*Header Section Start*/
@@ -53,3 +56,17 @@ nav > a {
   font-weight: 600;
 }
 /*Header Section End*/
+
+/*Main Section Start*/
+/*Main Section End*/
+
+/*Footer Section Start*/
+footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  background-color: #4b4b4b;
+}
+/*Fotter Section End*/
