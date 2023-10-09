@@ -4,7 +4,7 @@
   font-family: "Inter", sans-serif;
   font-family: "Karla", sans-serif;
   line-height: 1.5;
-  width: 30%;
+  width: 50%;
   margin: auto;
 
   color-scheme: light dark;
@@ -17,11 +17,16 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+* {
+  box-sizing: border-box;
+}
 
+html,
 body {
   margin: 0;
-
-  background-color: #242424;
+  padding: 0;
+  background-color: #fff7ed;
+  font-family: "Inter", sans-serif;
 }
 
 /*Header Section Start*/
@@ -29,8 +34,8 @@ header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 24px;
-  background-color: aliceblue;
+  padding: 12px 24px;
+  background-color: #fff7ed;
   align-items: center;
   height: 64px;
 }
@@ -47,7 +52,7 @@ header a:hover {
   text-transform: uppercase;
   font-weight: 900;
   text-decoration: none;
-  font-size: 48px;
+  font-size: 36px;
 }
 
 nav {
@@ -60,10 +65,13 @@ nav > a {
   color: #4d4d4d;
   font-size: 24px;
   font-weight: 600;
+  margin-right: 12px;
 }
 /*Header Section End*/
 
 /*Main Section Start*/
+
+/*Home Page Section Start*/
 .home-page-container {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0.46)),
     url("./assets/images/about-hero.png") no-repeat center center;
@@ -106,6 +114,70 @@ nav > a {
 .home-page-container button:hover {
   transform: translate(1px, 1px);
 }
+/*Home Page Section End*/
+
+/*About Page Section Start*/
+.about-page-container {
+  background-color: #fff7ed;
+  color: #161616;
+  width: 100%;
+}
+
+.about-page-container h1 {
+  color: #161616;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 700;
+  padding: 0 16px;
+  margin: 24px 16px 0 16px;
+}
+
+.about-page-container p {
+  color: #161616;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 16px;
+  margin: 24px 16px 0 16px;
+}
+.about-page-container img {
+  width: 100%;
+}
+
+.second-paragraph {
+  margin-top: 12px;
+}
+
+.van-card {
+  border-radius: 5px;
+  background: #ffcc8d;
+  margin: 24px 16px 16px 16px;
+}
+
+.van-card p {
+  color: #161616;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.van-card button {
+  border-radius: 10px;
+  background: #161616;
+  margin-left: 26px;
+  margin-bottom: 12px;
+  height: 48px;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 8px 16px;
+  transition: transform 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.van-card button:hover {
+  transform: translate(1px, 1px);
+}
+/*About Page Sectiopn End*/
 /*Main Section End*/
 
 /*Footer Section Start*/
@@ -114,7 +186,6 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: auto;
   background-color: #4b4b4b;
 }
 
