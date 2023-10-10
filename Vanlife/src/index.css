@@ -3,7 +3,6 @@
 :root {
   font-family: "Inter", sans-serif;
   font-family: "Karla", sans-serif;
-  line-height: 1.5;
   width: 50%;
   margin: auto;
 
@@ -17,6 +16,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+
 * {
   box-sizing: border-box;
 }
@@ -299,6 +299,93 @@ nav > a {
   background-color: #161616;
 }
 /*Vans Page Section End*/
+
+/*Vans Detail Section Start*/
+.van-detail-container {
+  padding: 12px 24px;
+  color: #201f1d;
+  display: flex;
+  flex-direction: column;
+}
+
+.back-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 24px;
+  color: #201f1d;
+  text-decoration: none;
+}
+
+.back-button > p {
+  color: #201f1d;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  margin-left: 12px;
+}
+
+.back-button:hover {
+  text-decoration: underline;
+}
+
+.van-image {
+  width: 80%;
+  align-self: center;
+  border-radius: 8px;
+}
+
+#van-type {
+  margin: 12px 10%;
+}
+
+.van-title {
+  color: #161616;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 10%;
+}
+
+.van-detail-price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #161616;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 10%;
+}
+
+.van-detail-price > span {
+  color: #161616;
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.van-description {
+  color: #161616;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  margin: 12px 10%;
+}
+
+.van-button {
+  padding: 12px 24px;
+  background-color: #ff8c38;
+  border-radius: 6px;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  align-self: center;
+  width: 80%;
+}
+/*Vans Detail Section End*/
+
 /*Main Section End*/
 
 /*Footer Section Start*/
