@@ -10,6 +10,7 @@ import "./server";
 const App = () => {
   return (
     <BrowserRouter>
+      {/* Link elements for helping render and routing another pages */}
       <header>
         <Link className="site-logo" to="/">
           #VanLife
@@ -19,7 +20,7 @@ const App = () => {
           <Link to="/vans">Vans</Link>
         </nav>
       </header>
-
+      {/* Routes element for routing betweeen pages */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
