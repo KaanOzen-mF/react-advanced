@@ -11,13 +11,6 @@ import Dashboard from "./pages/Host/Dashboard";
 import Income from "./pages/Host/Income";
 import Reviews from "./pages/Host/Reviews";
 
-/**
-
- * 3. Set up routes for each of these pages in the Routes below. FOR NOW,
- *    don't worry about nesting anything, you can just put them on the same
- *    level as the "/vans", etc. routes below.
- */
-
 const App = () => {
   return (
     <BrowserRouter>
