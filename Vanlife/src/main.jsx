@@ -6,26 +6,19 @@ import Vans from "./pages/Vans";
 import VansDetail from "./pages/VansDetail";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./server";
+import Layout from "./components/Layout";
 
 const App = () => {
   return (
     <BrowserRouter>
-      {/* Link elements for helping render and routing another pages */}
-      <header>
-        <Link className="site-logo" to="/">
-          #VanLife
-        </Link>
-        <nav>
-          <Link to="/about">About</Link>
-          <Link to="/vans">Vans</Link>
-        </nav>
-      </header>
       {/* Routes element for routing betweeen pages */}
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/vans" element={<Vans />} />
-        <Route path="/vans/:id" element={<VansDetail />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/vans" element={<Vans />} />
+          <Route path="/vans/:id" element={<VansDetail />} />
+        </Route>
       </Routes>
 
       <footer>
