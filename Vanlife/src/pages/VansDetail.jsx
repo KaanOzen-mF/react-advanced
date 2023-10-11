@@ -27,10 +27,10 @@ export default function VansDetail() {
             <p>Back to all vans</p>
           </Link>
           <img className="van-image" src={van.imageUrl} />
-          //*According to vant type class different color shown users
+          {/*According to vant type class different color shown users*/}
           <i id="van-type" className={`van-type ${van.type} selected`}>
-            //*My van type return as a all lowercase, prevent this situation
-            //*write this code
+            {/*My van type return as a all lowercase, prevent this situation
+            write this code*/}
             {van.type
               ? van.type.charAt(0).toUpperCase() + van.type.slice(1)
               : ""}

@@ -24,11 +24,11 @@ export default function Vans() {
             <span className="day">/day</span>
           </div>
         </div>
-        //*According to vant type class different color shown users
+        {/*According to vant type class different color shown users*/}
         <i className={`van-type ${van.type} selected`}>
           {van.type.charAt(0).toUpperCase() + van.type.slice(1)}
-          //*My van type return as a all lowercase, prevent this situation write
-          //*this code
+          {/*My van type return as a all lowercase, prevent this situation
+            write this code*/}
         </i>
       </Link>
     </div>
