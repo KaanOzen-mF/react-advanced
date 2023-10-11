@@ -7,7 +7,7 @@
   margin: auto;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: black;
   background-color: rgb(0, 0, 0);
 
   font-synthesis: none;
@@ -386,9 +386,9 @@ nav > a {
 }
 /*Vans Detail Section End*/
 
-/*Main Section End*/
+/**Main Section End*/
 
-/*Footer Section Start*/
+/**Footer Section Start*/
 footer {
   width: 100%;
   display: flex;
@@ -404,4 +404,4 @@ footer p {
   font-style: normal;
   font-weight: 500;
 }
-/*Fotter Section End*/
+/**Fotter Section End*/
