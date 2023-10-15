@@ -386,6 +386,20 @@ nav > a {
 }
 /*Vans Detail Section End*/
 
+/*Host Layout Section Start*/
+.host-nav {
+  display: flex;
+  padding: 36px 24px;
+  font-weight: 700;
+}
+
+.host-nav a:hover {
+  color: #161616;
+  text-decoration: underline;
+  transition: 0.2s;
+}
+/*Host Layout Section End*/
+
 /**Main Section End*/
 
 /**Footer Section Start*/
