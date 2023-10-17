@@ -441,6 +441,57 @@ nav > a {
 }
 /*Host Vans Section End*/
 
+/*Host Vans Detail Section Start*/
+.host-vans-detail-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 6px;
+  margin: 12px 24px;
+}
+
+.van-info-container {
+  display: flex;
+}
+
+.van-info-container > img {
+  width: 20%;
+  margin-left: 24px;
+}
+
+.van-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.van-info > p {
+  color: #161616;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 700;
+  text-align: left;
+  margin: 0 10%;
+}
+
+.host-vans-detail-nav {
+  text-align: left;
+  margin: 36px 0px 36px 24px;
+}
+
+.host-van-info-description {
+  margin: 12px 24px;
+}
+
+span {
+  color: #161616;
+  font-family: Inter;
+  font-size: 14.355px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 21.46px; /* 149.496% */
+}
+/*Host Vans Detail Section End*/
 /**Main Section End*/
 
 /**Footer Section Start*/
