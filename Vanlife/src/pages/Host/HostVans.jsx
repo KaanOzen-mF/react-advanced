@@ -13,8 +13,8 @@ export default function Vans() {
   }, []);
 
   const vansElement = vansData.map((van) => (
-    <Link to={`/host/vans/${van.id}`}>
-      <div className="host-vans-card" id={van.id}>
+    <Link to={`/host/vans/${van.id}`} key={van.id}>
+      <div className="host-vans-card">
         <img src={van.imageUrl} alt="" />
         <div>
           <p className="host-vans-name">{van.name}</p>
@@ -28,7 +28,7 @@ export default function Vans() {
     <div className="host-vans-page">
       <h1>Your Listed Vans</h1>
       {vansData.length > 0 ? (
-        <div className="host-vans-page ">{vansElement}</div>
+        <div className="host-vans-page">{vansElement}</div>
       ) : (
         <h2>Loading...</h2>
       )}
