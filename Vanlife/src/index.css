@@ -400,6 +400,47 @@ nav > a {
 }
 /*Host Layout Section End*/
 
+/*Host Vans Section Start*/
+.host-vans-page > a {
+  text-decoration: none;
+}
+.host-vans-page > h1 {
+  margin: 12px 24px;
+}
+
+.host-vans-card {
+  background-color: #fff;
+  display: flex;
+  margin: 12px 24px;
+  padding: 6px 12px;
+  width: 95%;
+  border-radius: 6px;
+}
+
+.host-vans-card img {
+  width: 20%;
+  border-radius: 8px;
+  margin-right: 12px;
+}
+
+.host-vans-name {
+  color: #161616;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.host-vans-price {
+  color: #4d4d4d;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.host-vans-detail {
+  color: #201f1d;
+  font-size: 14px;
+}
+/*Host Vans Section End*/
+
 /**Main Section End*/
 
 /**Footer Section Start*/
