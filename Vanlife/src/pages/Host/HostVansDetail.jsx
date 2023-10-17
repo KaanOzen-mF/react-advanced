@@ -27,7 +27,7 @@ export default function HostVansDetail() {
     <div>
       {van !== null ? (
         <div className="host-vans-detail-container">
-          <Link to="/host/vans" className="back-button">
+          <Link to=".." relative="path" className="back-button">
             <MdKeyboardBackspace size={24} />
             <p>Back to all vans</p>
           </Link>
