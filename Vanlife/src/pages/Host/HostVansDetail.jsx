@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, Link, NavLink } from "react-router-dom";
+import { useParams, Link, NavLink, Outlet } from "react-router-dom";
 import { MdKeyboardBackspace } from "react-icons/md";
 
 export default function HostVansDetail() {
@@ -54,38 +54,26 @@ export default function HostVansDetail() {
           <nav className="host-vans-detail-nav">
             <NavLink
               style={({ isActive }) => (isActive ? style : null)}
-              to="/host"
+              to="."
+              end
             >
               Details
             </NavLink>
             <NavLink
               style={({ isActive }) => (isActive ? style : null)}
-              to="/about"
+              to="pricing"
             >
               Pricing
             </NavLink>
             <NavLink
               style={({ isActive }) => (isActive ? style : null)}
-              to="/vans"
+              to="photos"
             >
               Photos
             </NavLink>
           </nav>
 
-          <p className="host-van-info-description">
-            <span>Name: </span>
-            {van[0].name}
-          </p>
-          <p className="host-van-info-description">
-            <span>Category: </span>
-            {van[0].type.charAt(0).toUpperCase() + van[0].type.slice(1)}
-          </p>
-          <p className="host-van-info-description">
-            <span>Description: </span> {van[0].description}
-          </p>
-          <p className="host-van-info-description">
-            <span>Visibility: </span>
-          </p>
+          <Outlet context={{ van }} />
         </div>
       ) : (
         <h2>Loading...</h2>
