@@ -13,6 +13,9 @@ import Reviews from "./pages/Host/Reviews";
 import HostLayout from "./components/HostLayout";
 import HostVans from "./pages/Host/HostVans";
 import HostVansDetail from "./pages/Host/HostVansDetail";
+import HostVansPricing from "./pages/Host/HostVansPricing";
+import HostVansInfo from "./pages/Host/HostVansInfo";
+import HostVansPhotos from "./pages/Host/HostVansPhotos";
 /**
  * Challenge: add the /host/vans and /host/vans/:id routes, as well
  * as the "Vans" link in the Host navbar.
@@ -43,7 +46,12 @@ const App = () => {
             <Route path="income" element={<Income />} />
             <Route path="reviews" element={<Reviews />} />
             <Route path="vans" element={<HostVans />} />
-            <Route path="vans/:id" element={<HostVansDetail />} />
+
+            <Route path="vans/:id" element={<HostVansDetail />}>
+              <Route index element={<HostVansInfo />} />
+              <Route path="pricing" element={<HostVansPricing />} />
+              <Route path="photos" element={<HostVansPhotos />} />
+            </Route>
           </Route>
         </Route>
       </Routes>
