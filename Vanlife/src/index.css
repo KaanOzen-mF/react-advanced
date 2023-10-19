@@ -491,6 +491,39 @@ span {
   font-weight: 700;
   line-height: 21.46px; /* 149.496% */
 }
+
+.host-vans-price {
+  color: #161616;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.host-vans-price > span {
+  color: #161616;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.host-vans-pricing {
+  color: #161616;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 12px 24px;
+}
+
+.host-vans-day {
+  color: #4d4d4d;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.host-vans-photos {
+  width: 20%;
+  margin: 12px 24px;
+  border-radius: 5px;
+}
 /*Host Vans Detail Section End*/
 /**Main Section End*/
 
