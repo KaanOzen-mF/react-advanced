@@ -6,7 +6,10 @@ export default function HostVansPricing() {
 
   return (
     <div>
-      <p className="host-vans-price">${van[0].price}/day</p>
+      <p className="host-vans-pricing">
+        ${van[0].price}
+        <span className="host-vans-day">/day</span>
+      </p>
     </div>
   );
 }

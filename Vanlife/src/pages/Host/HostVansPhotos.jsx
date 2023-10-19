@@ -5,7 +5,7 @@ export default function HostVansPhotos() {
   const { van } = useOutletContext();
   return (
     <div>
-      <img src={van[0].imageUrl} />
+      <img src={van[0].imageUrl} className="host-vans-photos" />
     </div>
   );
 }

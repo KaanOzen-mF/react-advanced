@@ -19,7 +19,10 @@ export default function Vans() {
         <div>
           <p className="host-vans-name">{van.name}</p>
           <p className="host-vans-detail">{van.description}</p>
-          <p className="host-vans-price">${van.price}/day</p>
+          <p className="host-vans-price">
+            ${van.price}
+            <span>/day</span>
+          </p>
         </div>
       </div>
     </Link>
