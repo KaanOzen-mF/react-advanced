@@ -1,9 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 export default function Vans() {
+  //*State for search params
+  const [searchParams, setSearchParams] = useSearchParams();
+
   //*State for keep vans data
   const [vansData, setVansData] = React.useState([]);
+
+  const typeFilter = searchParams.get("type");
+  console.log(typeFilter);
 
   //*Use effect for fetch api datas, dependency array empty(fetch when render page every time)
   React.useEffect(() => {
@@ -12,8 +18,12 @@ export default function Vans() {
       .then((data) => setVansData(data.vans));
   }, []);
 
+  //*Filter function for van types
+  const filteredVans = typeFilter
+    ? vansData.filter((van) => van.type === typeFilter)
+    : vansData;
   //*Map my vans data for render JSX elements
-  const vanElements = vansData.map((van) => (
+  const vanElements = filteredVans.map((van) => (
     <div key={van.id} className="card">
       <Link to={`/vans/${van.id}`} className="card">
         <img src={van.imageUrl} />
@@ -40,11 +50,13 @@ export default function Vans() {
 
       <div className="filter-container">
         <ul className="filter-buttons">
-          <li>Simple</li>
-          <li>Luxury</li>
-          <li>Rugged</li>
+          <li onClick={() => setSearchParams({ type: "simple" })}>Simple</li>
+          <li onClick={() => setSearchParams({ type: "luxury" })}>Luxury</li>
+          <li onClick={() => setSearchParams({ type: "rugged" })}>Rugged</li>
         </ul>
-        <p>Clear Filters</p>
+        <p className="clear-filter-button">
+          <Link to={"."}>Clear Filters</Link>
+        </p>
       </div>
 
       <div className="card-container">{vanElements}</div>
