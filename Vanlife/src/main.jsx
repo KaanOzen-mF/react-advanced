@@ -16,19 +16,7 @@ import HostVansDetail from "./pages/Host/HostVansDetail";
 import HostVansPricing from "./pages/Host/HostVansPricing";
 import HostVansInfo from "./pages/Host/HostVansInfo";
 import HostVansPhotos from "./pages/Host/HostVansPhotos";
-/**
- * Challenge: add the /host/vans and /host/vans/:id routes, as well
- * as the "Vans" link in the Host navbar.
- *
- * For now, just create the stubbed-out version of the pages (i.e.
- * components that just render an <h1>). Don't worry about adding
- * navigation from /host/vans to /host/vans/:id yet - the link to
- * /host/vans is enough for now.
- *
- * When deciding whether or not to use nested routes, keep in mind
- * what will/won't be shared between these two pages. See the Figma
- * design file (or the screenshots) to help guide your choice.
- */
+
 const App = () => {
   return (
     <BrowserRouter>
