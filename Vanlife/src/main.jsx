@@ -1,21 +1,24 @@
 import React from "react";
+import "./server";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Vans from "./pages/Vans/Vans";
 import VansDetail from "./pages/Vans/VansDetail";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import "./server";
-import Layout from "./components/Layout";
 import Dashboard from "./pages/Host/Dashboard";
 import Income from "./pages/Host/Income";
 import Reviews from "./pages/Host/Reviews";
-import HostLayout from "./components/HostLayout";
 import HostVans from "./pages/Host/HostVans";
 import HostVansDetail from "./pages/Host/HostVansDetail";
 import HostVansPricing from "./pages/Host/HostVansPricing";
 import HostVansInfo from "./pages/Host/HostVansInfo";
 import HostVansPhotos from "./pages/Host/HostVansPhotos";
+import ErrorPage from "./pages/ErrorPage";
+
+import Layout from "./components/Layout";
+import HostLayout from "./components/HostLayout";
 
 const App = () => {
   return (
@@ -41,6 +44,7 @@ const App = () => {
               <Route path="photos" element={<HostVansPhotos />} />
             </Route>
           </Route>
+          <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
