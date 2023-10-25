@@ -1,15 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { getHostVans } from "../../api";
 
 export default function Vans() {
   //*State for keep vans data
   const [vansData, setVansData] = React.useState([]);
 
+  //*State for loading animation or text
+  const [loading, setLoading] = React.useState(false);
+
+  //*State for error handling
+  const [error, setError] = React.useState(null);
+
   //*Use effect for fetch api datas, dependency array empty(fetch when render page every time)
   React.useEffect(() => {
-    fetch("/api/host/vans")
-      .then((res) => res.json())
-      .then((data) => setVansData(data.vans));
+    async function loadVans() {
+      setLoading(true);
+      try {
+        const data = await getHostVans();
+        setVansData(data);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadVans();
   }, []);
 
   const vansElement = vansData.map((van) => (
@@ -27,6 +43,14 @@ export default function Vans() {
       </div>
     </Link>
   ));
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (error) {
+    return <h1>There was an error: {error.message}</h1>;
+  }
   return (
     <div className="host-vans-page">
       <h1>Your Listed Vans</h1>
