@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
+import { RxAvatar } from "react-icons/rx";
 
 //* Link elements for helping render and routing another pages
 
@@ -28,6 +29,9 @@ export default function Header() {
         <NavLink style={({ isActive }) => (isActive ? style : null)} to="/vans">
           Vans
         </NavLink>
+        <Link to="login">
+          <RxAvatar />
+        </Link>
       </nav>
     </header>
   );
