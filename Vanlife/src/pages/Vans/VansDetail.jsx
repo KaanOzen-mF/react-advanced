@@ -1,21 +1,47 @@
 import React from "react";
 import { useParams, Link, useLocation } from "react-router-dom";
 import { MdKeyboardBackspace } from "react-icons/md";
+import { getVans } from "../../api";
 
 export default function VansDetail() {
-  const location = useLocation();
-  //*Params use for when render vans detail page take id
-  const params = useParams();
   //*State for vans data, initial value is null because maybe when routes it can not match id
   const [van, setVan] = React.useState([null]);
+
+  //*State for loading animation or text
+  const [loading, setLoading] = React.useState(false);
+
+  //*State for error handling
+  const [error, setError] = React.useState(null);
+
+  //*Params use for when render vans detail page take id
+  const { id } = useParams();
+
+  const location = useLocation();
 
   //*Effect for fetch vans data respectivly vans onwn id
   //*When id change, render every time
   React.useEffect(() => {
-    fetch(`/api/vans/${params.id}`)
-      .then((res) => res.json())
-      .then((data) => setVan(data.vans));
-  }, [params.id]);
+    async function loadVans() {
+      setLoading(true);
+      try {
+        const data = await getVans(id);
+        setVan(data);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadVans();
+  }, [id]);
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (error) {
+    return <h1>There was an error: {error.message}</h1>;
+  }
 
   const search = location.state?.search || "";
   return (
