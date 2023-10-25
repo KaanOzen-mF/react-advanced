@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, Link, NavLink, Outlet } from "react-router-dom";
 import { MdKeyboardBackspace } from "react-icons/md";
+import { getHostVans } from "../../api";
 
 export default function HostVansDetail() {
   const style = {
@@ -8,19 +9,44 @@ export default function HostVansDetail() {
     textDecoration: "underline",
     color: "#161616",
   };
-  //*Params use for when render vans detail page take id
-  const params = useParams();
+
   //*State for vans data, initial value is null because maybe when routes it can not match id
   const [van, setVan] = React.useState(null);
+
+  //*State for loading animation or text
+  const [loading, setLoading] = React.useState(false);
+
+  //*State for error handling
+  const [error, setError] = React.useState(null);
+
+  //*Params use for when render vans detail page take id
+  const { id } = useParams();
 
   //*Effect for fetch vans data respectivly vans onwn id
   //*When id change, render every time
   React.useEffect(() => {
-    fetch(`/api/host/vans/${params.id}`)
-      .then((res) => res.json())
-      .then((data) => setVan(data.vans));
-  }, [params.id]);
+    async function loadVans() {
+      setLoading(true);
+      try {
+        const data = await getHostVans();
+        setVan(data);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    }
 
+    loadVans();
+  }, [id]);
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (error) {
+    return <h1>There was an error: {error.message}</h1>;
+  }
   return (
     //* My initial van is null and this situation maybe creates some bug. This
     //*conditional render for to prevent this situation
