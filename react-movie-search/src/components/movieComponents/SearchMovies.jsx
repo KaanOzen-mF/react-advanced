@@ -1,7 +1,7 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 
-export default function SearchMovies(props) {
+export default function SearchMovies() {
   const [query, setQuery] = React.useState("");
   const [movie, setMovie] = React.useState([]);
 
@@ -43,14 +43,7 @@ export default function SearchMovies(props) {
         {movie
           .filter((movie) => movie.poster_path)
           .map((movie) => (
-            <MovieCard
-              movieId={movie.id}
-              moviePoster={movie.poster_path}
-              movieTitle={movie.title}
-              releaseDate={movie.release_date}
-              rating={movie.vote_average}
-              overview={movie.overview}
-            />
+            <MovieCard movie={movie} key={movie.id} />
           ))}
       </div>
     </>
