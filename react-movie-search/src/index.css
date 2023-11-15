@@ -99,3 +99,13 @@ small {
   margin: 0 auto;
   display: block;
 }
+
+.card--overview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card--desc {
+  transition: 250ms;
+}
