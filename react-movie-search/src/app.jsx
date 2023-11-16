@@ -1,14 +1,20 @@
 import React from "react";
 import SearchMovies from "./components/movieComponents/SearchMovies";
 import SearchSeries from "./components/serieComponents/SearchSeries";
+import MovieDetail from "./components/movieComponents/MovieDetail";
+
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Layout from "./Layout";
 
 export default function App() {
   return (
-    <div className="container">
-      <h1 className="title">Movie Search</h1>
-      <SearchMovies />
-      <h1 className="title">Series Search</h1>
-      <SearchSeries />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Layout />} />
+        <Route path="/movies" element={<SearchMovies />} />
+        <Route path="/movies/:id" element={<MovieDetail />} />
+        <Route path="/series" element={<SearchSeries />} />
+      </Routes>
+    </Router>
   );
 }
