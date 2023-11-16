@@ -1,9 +1,11 @@
 import React from "react";
 import { FaAngleDown, FaAngleUp, FaCirclePlus } from "react-icons/fa6";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function MovieCard({ movie }) {
   const [openOverview, setOpenOverview] = React.useState(false);
 
+  const navigate = useNavigate(); // Use the useNavigate hook here
   const toggleOverview = () => {
     setOpenOverview(!openOverview);
   };
@@ -65,12 +67,18 @@ export default function MovieCard({ movie }) {
     (genreNumber) => genreMapping[genreNumber]
   );
 
+  const navigateToMovieDetail = () => {
+    // Use the `navigate` function to navigate to the movie detail page
+    navigate(`/movies/${movie.id}`);
+  };
+
   return (
     <div className="card">
       <img
         className="card--image"
         src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
         alt={movie.title + " poster"}
+        onClick={navigateToMovieDetail}
       />
       <div className="card--content">
         <h3 className="card--title">{movie.title}</h3>
