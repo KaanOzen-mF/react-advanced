@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import SearchIcon from "./assets/search-icon.svg";
 
 export default function Layout() {
   const [poularMovie, setPopularMovie] = React.useState(null);
@@ -58,11 +59,12 @@ export default function Layout() {
         />
         <div className="card--content">
           <h3 className="card--title">{i.title}</h3>
-          <p>
-            <small>RELEASE DATE: {i.release_date}</small>
+          <p className="card--release">
+            <small>RELEASE DATE:</small> {i.release_date}
           </p>
-          <p>
-            <small>RATING: {i.vote_average}</small>
+          <p className="card--rating">
+            <small> RATING: </small>
+            {i.vote_average}
           </p>
         </div>
       </div>
@@ -110,26 +112,33 @@ export default function Layout() {
       </div>
     );
   });
-  return (
-    <div className="container">
-      <h1 className="title">MovieSphere</h1>
 
-      <div className="container">
+  return (
+    <div className="home-container">
+      <div className="header-container">
+        <h1 className="header-title">MovieSphere</h1>
+      </div>
+      <div className="button-container">
         <Link className="title" to="/movies">
+          <img src={SearchIcon} alt="" />
           Movie Search
         </Link>
-        <br />
         <Link className="title" to="/series">
+          <img src={SearchIcon} alt="" />
           Series Search
         </Link>
       </div>
 
-      <h1 className="title">Popular Movies</h1>
+      <h1 className="layout-title">Popular Movies</h1>
       <div className="layout-card">{popularMovies}</div>
-      <h1 className="title">Top Rated Movies</h1>
+      <h1 className="layout-title">Top Rated Movies</h1>
       <div className="layout-card">{topRatedMovies}</div>
-      <h1 className="title">Upcoming Movies</h1>
+      <h1 className="layout-title">Upcoming Movies</h1>
       <div className="layout-card">{upcomingMovies}</div>
+
+      <footer>
+        <p className="footer-text">Kaan Ozen &#169; 2023</p>
+      </footer>
     </div>
   );
 }
