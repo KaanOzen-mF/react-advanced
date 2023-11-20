@@ -39,52 +39,7 @@ small {
   text-align: center;
 }
 
-.form {
-  display: grid;
-}
-
-.label {
-  font-size: 1.2rem;
-  margin-bottom: 0.2rem;
-  text-transform: uppercase;
-}
-
-.input {
-  font-size: 1.6rem;
-  padding: 0.5rem 2rem;
-  line-height: 2.8rem;
-  border-radius: 20px;
-  border: 1px solid #ddd;
-  margin-bottom: 1rem;
-}
-
-.button {
-  background-color: rgba(0, 0, 0, 0.75);
-  color: white;
-  padding: 1rem 2rem;
-  border: 1px solid rgba(0, 0, 0, 0.75);
-  border-radius: 20px;
-  font-size: 1.4rem;
-  cursor: pointer;
-  transition: background-color 250ms;
-}
-
-.button:hover {
-  background-color: rgba(0, 0, 0, 0.85);
-}
-
-@media (min-width: 786px) {
-  .form {
-    grid-template-columns: auto 1fr auto;
-    grid-gap: 1rem;
-    align-items: center;
-  }
-
-  .input {
-    margin-bottom: 0;
-  }
-}
-
+/*Layout.jsx start*/
 .home-container {
   display: flex;
   flex-direction: column;
@@ -217,4 +172,74 @@ footer {
   justify-content: center;
   align-items: center;
   background: #2b2b2b;
+}
+/*Layout.jsx finish*/
+
+/*Search Movie Start*/
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url("assets/cinema2.jpg") 50% / cover no-repeat, rgb(0, 0, 0);
+  height: 100vh;
+  /* Diğer stilleri ekle */
+
+  /* Eğer sonuçlar varsa arka plan görselini kaldır */
+  &.results {
+    background: rgb(0, 0, 0);
+    height: 100%;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label {
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+}
+
+.input {
+  font-size: 1.6rem;
+  padding: 0.5rem 2rem;
+  line-height: 2.8rem;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+}
+
+.button {
+  border-radius: 23px;
+  background: #3c7da1;
+  box-shadow: 0px 8px 4px 0px rgba(0, 0, 0, 0.25);
+  color: white;
+  padding: 1rem 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background-color 250ms;
+}
+
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+/*Search Movie End*/
+
+@media (min-width: 786px) {
+  .form {
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 1rem;
+    align-items: center;
+  }
+
+  .input {
+    margin-bottom: 0;
+  }
 }
