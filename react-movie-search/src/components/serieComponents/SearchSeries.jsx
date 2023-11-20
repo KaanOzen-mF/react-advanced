@@ -22,7 +22,7 @@ export default function SearchSeries() {
   };
 
   return (
-    <>
+    <div className={`search-container ${serie.length > 0 ? "results" : ""}`}>
       <form className="form" onSubmit={searchSeries}>
         <label htmlFor="query">Serie Name</label>
         <input
@@ -47,6 +47,6 @@ export default function SearchSeries() {
           <SerieCard key={serie.id} serie={serie} />
         ))}
       </div>
-    </>
+    </div>
   );
 }

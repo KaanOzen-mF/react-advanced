@@ -20,7 +20,7 @@ export default function SearchMovies() {
   };
 
   return (
-    <>
+    <div className={`search-container ${movie.length > 0 ? "results" : ""}`}>
       <form className="form" onSubmit={searchMovies}>
         <label htmlFor="query">Movie Name</label>
         <input
@@ -46,6 +46,6 @@ export default function SearchMovies() {
             <MovieCard movie={movie} key={movie.id} />
           ))}
       </div>
-    </>
+    </div>
   );
 }
