@@ -73,14 +73,14 @@ export default function MovieCard({ movie }) {
   };
 
   return (
-    <div className="card">
+    <div className="movie-card">
       <img
         className="card--image"
         src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
         alt={movie.title + " poster"}
         onClick={navigateToMovieDetail}
       />
-      <div className="card--content">
+      <div className="movie--card--content">
         <h3 className="card--title">{movie.title}</h3>
         <p>
           <small>RELEASE DATE: {movie.release_date}</small>
@@ -90,14 +90,14 @@ export default function MovieCard({ movie }) {
         </p>
 
         <p>Genres: {genreTexts.join(", ")}</p>
-        <FaCirclePlus onClick={addWatchlist} />
+        <FaCirclePlus size={24} onClick={addWatchlist} />
 
         <div className="card--overview">
           <p>Overview</p>
           {openOverview ? (
-            <FaAngleUp onClick={toggleOverview} />
+            <FaAngleUp size={18} onClick={toggleOverview} />
           ) : (
-            <FaAngleDown onClick={toggleOverview} />
+            <FaAngleDown size={18} onClick={toggleOverview} />
           )}
         </div>
         {openOverview && <p className="card--desc">{movie.overview}</p>}
