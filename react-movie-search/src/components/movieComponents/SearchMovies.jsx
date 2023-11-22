@@ -1,5 +1,8 @@
 import React from "react";
 import MovieCard from "./MovieCard";
+import { Link } from "react-router-dom";
+
+import { FaStepBackward } from "react-icons/fa";
 
 export default function SearchMovies() {
   const [query, setQuery] = React.useState("");
@@ -22,17 +25,21 @@ export default function SearchMovies() {
   return (
     <div className={`search-container ${movie.length > 0 ? "results" : ""}`}>
       <form className="form" onSubmit={searchMovies}>
-        <label htmlFor="query">Movie Name</label>
-        <input
-          type="text"
-          placeholder="i.e. Lord of the Rings"
-          name="query"
-          className="input"
-          value={query}
-          onChange={(e) => {
-            setQuery(e.target.value);
-          }}
-        />
+        <div className="search-bar-nav">
+          <Link to="..">
+            <FaStepBackward size={38} color="white" />
+          </Link>
+          <input
+            type="text"
+            placeholder="i.e. Lord of the Rings"
+            name="query"
+            className="input"
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value);
+            }}
+          />
+        </div>
 
         <button type="submit" className="button">
           Search
