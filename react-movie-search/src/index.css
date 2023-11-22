@@ -174,12 +174,12 @@ small {
   justify-content: space-between;
   background-color: #ffffff;
   margin: 6px 0;
-  padding: 0 2px;
+  padding: 0 6px;
   width: 100%;
+  border-radius: 6px;
 }
 
 .card--desc {
-  transition: 250ms;
   background-color: #ababab;
   padding: 6px;
   width: 100%;
@@ -195,12 +195,9 @@ small {
   align-items: center;
   background: url("assets/cinema2.jpg") 50% / cover no-repeat, rgb(0, 0, 0);
   height: 100vh;
-  /* Diğer stilleri ekle */
-
-  /* Eğer sonuçlar varsa arka plan görselini kaldır */
   &.results {
-    background: rgb(0, 0, 0);
-    height: 100%;
+    background: url("assets/cinema2.jpg") / cover repeat-y, rgb(0, 0, 0);
+    height: fit-content;
   }
 }
 
@@ -282,3 +279,62 @@ footer {
     margin-bottom: 0;
   }
 }
+
+/*Loader Animation Section Start*/
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url("assets/cinema2.jpg") 50% / cover no-repeat, rgb(0, 0, 0);
+}
+
+.loader-text {
+  margin: 5px auto;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 900;
+  font-family: "Inter", sans-serif;
+}
+
+.loader-filmstrip {
+  position: relative;
+  width: 56px;
+  height: 70px;
+  background: #ffffff;
+  z-index: -1;
+}
+
+.loader-filmstrip:before,
+.loader-filmstrip:after {
+  content: "";
+  position: absolute;
+  height: 80%;
+  border-left: 5px dashed #4b4948;
+  animation: roll 20ms infinite;
+}
+
+.loader-filmstrip:before {
+  left: 5px;
+}
+
+.loader-filmstrip:after {
+  right: 5px;
+}
+
+@keyframes roll {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: 15px;
+  }
+}
+/*Loader Animation Section End*/
