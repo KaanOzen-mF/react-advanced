@@ -12,8 +12,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />} />
         <Route path="/movies" element={<SearchMovies />} />
-        <Route path="/movies/:id" element={<MovieDetail />} />
         <Route path="/series" element={<SearchSeries />} />
+        <Route path="/movies/:id" element={<MovieDetail />} />
       </Routes>
     </Router>
   );
