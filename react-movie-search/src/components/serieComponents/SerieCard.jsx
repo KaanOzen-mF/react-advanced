@@ -71,33 +71,30 @@ export default function SerieCard({ serie }) {
   );
 
   return (
-    <div className="card">
+    <div className="movie-card">
       <img
         className="card--image"
         src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${serie.poster_path}`}
         alt={serie.title + " poster"}
       />
-      <div className="card--content">
-        <h3 className="card--title">{serie.original_name}</h3>
+      <div className="movie--card--content">
+        <h3 className="card--title">{serie.title}</h3>
         <p>
-          <small>RELEASE DATE: {serie.first_air_date}</small>
-        </p>
-        <p>
-          <small>Vote Count: {serie.vote_count}</small>
+          <small>RELEASE DATE: {serie.release_date}</small>
         </p>
         <p>
           <small>RATING: {serie.vote_average}</small>
         </p>
 
         <p>Genres: {genreTexts.join(", ")}</p>
-        <FaCirclePlus onClick={addWatchlist} />
+        <FaCirclePlus size={24} onClick={addWatchlist} />
 
         <div className="card--overview">
           <p>Overview</p>
           {openOverview ? (
-            <FaAngleUp onClick={toggleOverview} />
+            <FaAngleUp size={18} onClick={toggleOverview} />
           ) : (
-            <FaAngleDown onClick={toggleOverview} />
+            <FaAngleDown size={18} onClick={toggleOverview} />
           )}
         </div>
         {openOverview && <p className="card--desc">{serie.overview}</p>}
