@@ -1,5 +1,8 @@
 import React from "react";
 import SerieCard from "./SerieCard";
+import { FaStepBackward } from "react-icons/fa";
+
+import { Link } from "react-router-dom";
 
 export default function SearchSeries() {
   const [query, setQuery] = React.useState("");
@@ -24,28 +27,33 @@ export default function SearchSeries() {
   return (
     <div className={`search-container ${serie.length > 0 ? "results" : ""}`}>
       <form className="form" onSubmit={searchSeries}>
-        <label htmlFor="query">Serie Name</label>
-        <input
-          type="text"
-          placeholder="i.e. Breaking Bad"
-          name="query"
-          className="input"
-          value={query}
-          onChange={(e) => {
-            setQuery(e.target.value);
-          }}
-        />
+        <div className="search-bar-nav">
+          <Link to="..">
+            <FaStepBackward size={38} color="white" />
+          </Link>
+          <input
+            type="text"
+            placeholder="i.e. Breaking Bad"
+            name="query"
+            className="input"
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value);
+            }}
+          />
+        </div>
 
         <button type="submit" className="button">
           Search
         </button>
       </form>
 
-      {/* Display search results */}
       <div className="card-list">
-        {serie.map((serie) => (
-          <SerieCard key={serie.id} serie={serie} />
-        ))}
+        {serie
+          .filter((serie) => serie.poster_path)
+          .map((serie) => (
+            <SerieCard serie={serie} key={serie.id} />
+          ))}
       </div>
     </div>
   );
