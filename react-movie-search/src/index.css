@@ -103,7 +103,13 @@ small {
   height: max-content;
   /* Set a maximum width for each layout-card to control the scrollable area */
   max-width: 100%;
-  background-color: #2c2c2c;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(183, 183, 183, 1) 21%,
+    rgba(0, 0, 0, 1) 82%
+  );
 }
 
 /* Adjust the styling for the movie sections as needed */
