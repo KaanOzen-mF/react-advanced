@@ -1,9 +1,12 @@
 import React from "react";
 import { FaAngleDown, FaAngleUp, FaCirclePlus } from "react-icons/fa6";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import PopupNotification from "../PopupNotification";
 
 export default function MovieCard({ movie }) {
   const [openOverview, setOpenOverview] = React.useState(false);
+  const [showPopup, setShowPopup] = React.useState(false);
+  const [popupMessage, setPopupMessage] = React.useState("");
 
   const navigate = useNavigate(); // Use the useNavigate hook here
   const toggleOverview = () => {
@@ -35,9 +38,11 @@ export default function MovieCard({ movie }) {
 
       // Save the updated watchlist to local storage
       localStorage.setItem("watchlist", JSON.stringify(newWatchlist));
-      console.log("Movie added to watchlist:", newMovie);
+      setShowPopup(true);
+      setPopupMessage("Serie is added in the watchlist");
     } else {
-      console.log("Movie is already in the watchlist");
+      setPopupMessage("Serie is already in the watchlist");
+      setShowPopup(true);
     }
   };
 
@@ -102,6 +107,9 @@ export default function MovieCard({ movie }) {
         </div>
         {openOverview && <p className="card--desc">{movie.overview}</p>}
       </div>
+      {showPopup && (
+        <PopupNotification message={popupMessage} setShowPopup={setShowPopup} />
+      )}
     </div>
   );
 }
