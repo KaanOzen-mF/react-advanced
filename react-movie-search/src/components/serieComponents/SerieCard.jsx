@@ -1,8 +1,11 @@
 import React from "react";
 import { FaAngleDown, FaAngleUp, FaCirclePlus } from "react-icons/fa6";
+import PopupNotification from "../PopupNotification";
 
 export default function SerieCard({ serie }) {
   const [openOverview, setOpenOverview] = React.useState(false);
+  const [showPopup, setShowPopup] = React.useState(false);
+  const [popupMessage, setPopupMessage] = React.useState("");
 
   const toggleOverview = () => {
     setOpenOverview(!openOverview);
@@ -33,9 +36,11 @@ export default function SerieCard({ serie }) {
 
       // Save the updated watchlist to local storage
       localStorage.setItem("watchlist", JSON.stringify(newWatchlist));
-      console.log("serie added to watchlist:", newserie);
+      setShowPopup(true);
+      setPopupMessage("Serie is added in the watchlist");
     } else {
-      console.log("serie is already in the watchlist");
+      setPopupMessage("Serie is already in the watchlist");
+      setShowPopup(true);
     }
   };
 
@@ -99,6 +104,9 @@ export default function SerieCard({ serie }) {
         </div>
         {openOverview && <p className="card--desc">{serie.overview}</p>}
       </div>
+      {showPopup && (
+        <PopupNotification message={popupMessage} setShowPopup={setShowPopup} />
+      )}
     </div>
   );
 }
