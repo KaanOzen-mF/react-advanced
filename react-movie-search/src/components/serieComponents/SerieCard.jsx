@@ -6,6 +6,7 @@ export default function SerieCard({ serie }) {
   const [openOverview, setOpenOverview] = React.useState(false);
   const [showPopup, setShowPopup] = React.useState(false);
   const [popupMessage, setPopupMessage] = React.useState("");
+  const [popupColor, setPopupColor] = React.useState("");
 
   const toggleOverview = () => {
     setOpenOverview(!openOverview);
@@ -38,9 +39,11 @@ export default function SerieCard({ serie }) {
       localStorage.setItem("watchlist", JSON.stringify(newWatchlist));
       setShowPopup(true);
       setPopupMessage("Serie is added in the watchlist");
+      setPopupColor("");
     } else {
       setPopupMessage("Serie is already in the watchlist");
       setShowPopup(true);
+      setPopupColor("alert");
     }
   };
 
@@ -105,7 +108,11 @@ export default function SerieCard({ serie }) {
         {openOverview && <p className="card--desc">{serie.overview}</p>}
       </div>
       {showPopup && (
-        <PopupNotification message={popupMessage} setShowPopup={setShowPopup} />
+        <PopupNotification
+          message={popupMessage}
+          setShowPopup={setShowPopup}
+          popupColor={popupColor}
+        />
       )}
     </div>
   );
