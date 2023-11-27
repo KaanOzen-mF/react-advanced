@@ -12,7 +12,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(244, 244, 244);
+  background-color: #000;
   color: #333;
 }
 
@@ -37,6 +37,26 @@ small {
 .title {
   font-size: 4.4rem;
   text-align: center;
+}
+
+.watchlist-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.watchlist-button-container > a {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  align-self: center;
+  color: #fff;
+  text-decoration: none;
+  background-color: #343434;
+  padding: 0 8px;
+  border-radius: 4px;
 }
 
 /*Layout.jsx start*/
@@ -260,6 +280,70 @@ small {
 }
 /*Search Movie End*/
 
+.watchlist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.back-btn {
+  margin-top: 12px;
+}
+.watchlist-container {
+  background-color: #000;
+
+  height: 100vh;
+  margin: 12px;
+  padding: 0;
+}
+
+.add-watchlist-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 50%;
+  margin-left: 10%;
+  color: #ddd;
+}
+
+.add-watchlist-container > a {
+  margin-right: 5%;
+}
+
+.watchlist-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ababab;
+  border-radius: 5px;
+  padding: 6px;
+  margin-bottom: 6px;
+}
+
+.watchlist-card > img {
+  width: 50%;
+  margin-top: 12px;
+}
+
+.watchlist--card--title {
+  color: #3a0e0e;
+  font-size: 22px;
+  text-align: center;
+}
+.watchlist--card--overview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+  background-color: #494848;
+  color: #ddd;
+  padding: 6px;
+}
+
+.overview--title {
+  align-self: start;
+}
 /*Footer Start*/
 .footer-text {
   color: #fff;
