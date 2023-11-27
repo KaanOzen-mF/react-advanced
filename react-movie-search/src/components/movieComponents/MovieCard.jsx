@@ -7,6 +7,7 @@ export default function MovieCard({ movie }) {
   const [openOverview, setOpenOverview] = React.useState(false);
   const [showPopup, setShowPopup] = React.useState(false);
   const [popupMessage, setPopupMessage] = React.useState("");
+  const [popupColor, setPopupColor] = React.useState("");
 
   const navigate = useNavigate(); // Use the useNavigate hook here
   const toggleOverview = () => {
@@ -40,9 +41,11 @@ export default function MovieCard({ movie }) {
       localStorage.setItem("watchlist", JSON.stringify(newWatchlist));
       setShowPopup(true);
       setPopupMessage("Serie is added in the watchlist");
+      setPopupColor("");
     } else {
       setPopupMessage("Serie is already in the watchlist");
       setShowPopup(true);
+      setPopupColor("alert");
     }
   };
 
@@ -108,7 +111,11 @@ export default function MovieCard({ movie }) {
         {openOverview && <p className="card--desc">{movie.overview}</p>}
       </div>
       {showPopup && (
-        <PopupNotification message={popupMessage} setShowPopup={setShowPopup} />
+        <PopupNotification
+          message={popupMessage}
+          setShowPopup={setShowPopup}
+          popupColor={popupColor}
+        />
       )}
     </div>
   );
