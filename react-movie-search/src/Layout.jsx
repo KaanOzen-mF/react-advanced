@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import SearchIcon from "./assets/search-icon.svg";
+import { MdOutlinePlaylistAddCheck } from "react-icons/md";
 
 export default function Layout() {
   const [poularMovie, setPopularMovie] = React.useState(null);
@@ -126,6 +127,12 @@ export default function Layout() {
         <Link className="title" to="/series">
           <img src={SearchIcon} alt="" />
           Series Search
+        </Link>
+      </div>
+      <div className="watchlist-button-container">
+        <Link className="title" to="/watchlist">
+          <MdOutlinePlaylistAddCheck />
+          <p>Watchlist</p>
         </Link>
       </div>
 
