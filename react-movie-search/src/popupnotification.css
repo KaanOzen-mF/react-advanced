@@ -16,6 +16,10 @@
   z-index: 999;
 }
 
+.alert {
+  background-color: red; /* Change to your desired alert color */
+}
+
 button {
   padding: 10px;
   font-size: 16px;

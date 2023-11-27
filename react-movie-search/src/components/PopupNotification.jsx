@@ -1,7 +1,7 @@
 import React from "react";
 import "../popupNotification.css";
 
-const PopupNotification = ({ message, setShowPopup }) => {
+const PopupNotification = ({ message, setShowPopup, popupColor }) => {
   // Automatically hide the popup after a delay (e.g., 3 seconds)
   React.useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -14,7 +14,7 @@ const PopupNotification = ({ message, setShowPopup }) => {
 
   return (
     <div className="popup-container">
-      <div className="popup-notification">
+      <div className={`popup-notification ${popupColor}`}>
         <p>{message}</p>
       </div>
     </div>
